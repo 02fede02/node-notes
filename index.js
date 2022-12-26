@@ -43,7 +43,7 @@ app.get('/notes', (request, response) => {
 			error: 'note.content is missingasdfa'
 		})
 	} else {
-		response.json(note)
+		response.json(notes)
 	}
 })
 
