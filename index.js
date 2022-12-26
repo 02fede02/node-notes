@@ -31,6 +31,10 @@ app.get('/', (request, response) => {
 	response.send('<h1>Hello fede</h1>')
 })
 
+app.get('/about', (request, response) => {
+	response.send('<p>About page</p>')
+})
+
 app.get('/notes', (request, response) => {
 	const note = request.body
 	console.log(note)
