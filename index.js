@@ -35,7 +35,7 @@ app.get('/notes', (request, response) => {
 	const note = request.body
 	if(!note || !note.content) {
 		return response.status(400).json({
-			error: 'note.content is missing'
+			error: 'note.content is missingasdfa'
 		})
 	}
 })
