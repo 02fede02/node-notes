@@ -28,10 +28,10 @@ let notes = [
 // })
 
 app.get('/', (request, response) => {
-	response.send('<h1>Hello World</h1>')
+	response.send('<h1>Hello fede</h1>')
 })
 
-app.get('/api/notes', (request, response) => {
+app.get('/notes', (request, response) => {
 	const note = request.body
 	if(!note || !note.content) {
 		return response.status(400).json({
@@ -46,7 +46,7 @@ app.get('/api/notes', (request, response) => {
 //     response.send(id)
 // })
 
-app.get('/api/notes/:id', (request, response) => {
+app.get('/notes/:id', (request, response) => {
 	const id = Number(request.params.id)
 	const note = notes.find(note => note.id === id)
 	console.log({id})
@@ -58,13 +58,13 @@ app.get('/api/notes/:id', (request, response) => {
 	}
 })
 
-app.delete('/api/notes/:id', (request, response) => {
+app.delete('/notes/:id', (request, response) => {
 	const id = Number(request.params.id)
 	notes = notes.filter(note => note.id !== id)
 	response.status(204).end()
 })
 
-app.post('/api/notes', (request, response) => {
+app.post('/notes', (request, response) => {
 	const note = request.body
 
 	const ids = notes.map(note => note.id)
