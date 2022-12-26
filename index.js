@@ -37,11 +37,13 @@ app.get('/about', (request, response) => {
 
 app.get('/notes', (request, response) => {
 	const note = request.body
-	console.log(note)
+	
 	if(!note || !note.content) {
 		return response.status(400).json({
 			error: 'note.content is missingasdfa'
 		})
+	} else {
+		response.json(note)
 	}
 })
 
